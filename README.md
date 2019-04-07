@@ -1,24 +1,15 @@
-# README
+# bookshop_appについて
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
+- jfoiejaflaje@fawjeioj
 
-Things you may want to cover:
+## 管理ユーザー情報
 
-* Ruby version
+## ## コンセプト
+- 東京を中心とした本屋の実地情報を食べログ的に知ることができ、店舗情報を一覧し、単なる書籍購入ではなく「本屋体験」を得る為のツールとしての利用を可能とする
 
-* System dependencies
+## 重視した点
 
-* Configuration
+## 技術内容
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 実装した機能等の概要
