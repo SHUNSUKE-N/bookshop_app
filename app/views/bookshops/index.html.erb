@@ -1,0 +1,9 @@
+<% provide(:title, 'All bookshops') %>
+
+<ul class="bookshops">
+<% @users.each do |bookshop| %>
+    <li>
+      <%= link_to bookshop.name, bookshop %>
+    </li>
+  <% end %>
+  </ul>
