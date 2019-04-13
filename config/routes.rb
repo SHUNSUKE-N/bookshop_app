@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'users/show'
   get 'comments/new'
+  get 'likes/index'
   resources :bookshops do
   end
 end
