@@ -9,6 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails',        '5.1.6'
 gem 'devise'
+gem 'cancancan'
 gem 'rails_admin', '~> 1.3'
 gem 'bootstrap-sass', '3.3.7'
 gem 'puma',         '3.9.1'
