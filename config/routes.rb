@@ -5,6 +5,5 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'comments/new'
   get 'likes/index'
-  resources :bookshops do
-  end
+  resources :bookshops
 end
