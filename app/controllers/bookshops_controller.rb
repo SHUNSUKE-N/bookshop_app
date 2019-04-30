@@ -1,4 +1,5 @@
 class BookshopsController < ApplicationController
+
   def edit
   end
 
@@ -15,8 +16,8 @@ class BookshopsController < ApplicationController
   end
 
   def create
-    @bookshop = Bookshop.new(bookstore_params)
-    if @user.save
+    @bookshop = Bookshop.new(bookshop_params)
+    if @bookshop.save
       # 保存の成功をここで扱う。
       redirect_to @bookshop
     else
@@ -28,9 +29,9 @@ class BookshopsController < ApplicationController
   end
 
   def update
-    if @shop.update_attributes(shops_params)
+    if @bookshop.update_attributes(bookshops_params)
       flash[:success] = "店舗の編集に成功しました。"
-      redirect_to @shop
+      redirect_to @bookshop
     else
       flash[:danger] = "店舗の編集に失敗しました。"
       render 'edit'
@@ -38,18 +39,18 @@ class BookshopsController < ApplicationController
   end
   
   def destroy
-    @shop.destroy
+    @bookshop.destroy
     flash[:success] = "店舗情報を削除しました。"
     redirect_to root_url
   end
 
   private
 
-    def booksthop_params
+    def bookshop_params
       params.require(:bookshop).permit(
         :name, 
         :phone, 
-        :image, 
+        :image_data, 
         :address, 
         :area, 
         :station, 
