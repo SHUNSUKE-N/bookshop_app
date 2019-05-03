@@ -3,4 +3,11 @@
 <p>
 「本屋体験」ができる東京の書店を紹介します。
 </p>
-<%= link_to "本屋を登録（管理者用）", 'bookshops/new'%>
+
+<ul class="bookshops">
+<% @bookshops.each do |bookshop| %>
+
+   <%= image_tag bookshop.image_data.url if bookshop.image_data? %>
+   <h3><%= link_to bookshop.name, bookshop %></h3>
+
+<% end %>

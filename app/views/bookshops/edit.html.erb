@@ -1,5 +1,5 @@
-<% provide(:title, '店舗情報変更') %>
-<h1>店舗情報変更</h1>
+<% provide(:title, '書店情報編集') %>
+<h1>書店情報編集</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@bookshop) do |f| %>
@@ -11,7 +11,7 @@
       <%= f.text_field :phone %>
 
       <%= f.label :image_data %>
-      <%= f.file_field :image_data %>
+      <%= f.file_field :image_data, accept: 'image/jpeg,image/gif,image/png' %>
 
       <%= f.label :address %>
       <%= f.text_field :address %>
@@ -46,7 +46,7 @@
 
 
 
-      <%= f.submit "これで情報変更", class: "btn btn-primary" %>
+      <%= f.submit "この編集を保存する", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div> 

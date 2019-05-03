@@ -1,6 +1,10 @@
 <% provide(:title, @bookshop.name) %>
-<h1>
-  <%= @bookshop.name %>
-</h1>
+<h2><%= @bookshop.name %></h2>
+
  <%= image_tag @bookshop.image_data %>
  <%= @bookshop.phone %>
+
+ <%= link_to '書店情報を編集する', edit_bookshop_url(@bookshop) %>
+
+
+

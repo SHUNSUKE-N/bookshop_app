@@ -1,14 +1,12 @@
 class BookshopsController < ApplicationController
 
-  def edit
-  end
+  before_action :find_bookshop, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookshops = Bookshop.all
   end
   
   def show
-    @bookshop = Bookshop.find(params[:id])
   end
 
   def new
@@ -18,9 +16,10 @@ class BookshopsController < ApplicationController
   def create
     @bookshop = Bookshop.new(bookshop_params)
     if @bookshop.save
-      # 保存の成功をここで扱う。
+      flash[:success] = "書店の登録に成功しました。"
       redirect_to @bookshop
     else
+      flash[:danger] = "書店の登録に失敗しました。"
       render 'new'
     end
   end
@@ -29,18 +28,18 @@ class BookshopsController < ApplicationController
   end
 
   def update
-    if @bookshop.update_attributes(bookshops_params)
-      flash[:success] = "店舗の編集に成功しました。"
+    if @bookshop.update_attributes(bookshop_params)
+      flash[:success] = "書店情報の編集に成功しました。"
       redirect_to @bookshop
     else
-      flash[:danger] = "店舗の編集に失敗しました。"
+      flash[:danger] = "書店情報の編集に失敗しました。"
       render 'edit'
     end
   end
   
   def destroy
     @bookshop.destroy
-    flash[:success] = "店舗情報を削除しました。"
+    flash[:success] = "書店情報を削除しました。"
     redirect_to root_url
   end
 
@@ -60,6 +59,10 @@ class BookshopsController < ApplicationController
         :business_hour,
         :holiday,
         :access)
+    end
+
+    def find_bookshop
+      @bookshop = Bookshop.find(params[:id])
     end
 
 end

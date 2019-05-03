@@ -11,13 +11,15 @@
   <body>
     <header>
       <nav>
+        <%= link_to "Bookshop tour", root_path %>
+        <%= link_to "書店一覧", bookshops_url %>
         <% if user_signed_in? %>
-        <strong><%= link_to current_user.username, pages_show_path %></strong>
-        <%= link_to 'プロフィール変更', edit_user_registration_path %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to 'サインアップ', new_user_registration_path %>
-        <%= link_to 'ログイン', new_user_session_path %>
+          <strong><%= link_to current_user.username, pages_show_path %></strong>
+          <%= link_to 'プロフィール変更', edit_user_registration_path %>
+           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to '新規ユーザー登録', new_user_registration_path %>
+          <%= link_to 'ログイン', new_user_session_path %>
         <% end %>
       </nav>
     </header>
@@ -25,6 +27,14 @@
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
+    <footer>
+      <nav>
+      　<%= link_to "ホーム", root_url %>
+        <%= link_to "新規書店を登録（管理者専用）", 'bookshops/new'%>
+      </nav>
+    </footer>
+
 
   </body>
 </html>
