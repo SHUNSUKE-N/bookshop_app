@@ -7,6 +7,7 @@ class BookshopsController < ApplicationController
   end
   
   def show
+    @comments = @bookshop.comments
   end
 
   def new

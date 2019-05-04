@@ -2,9 +2,21 @@
 <h2><%= @bookshop.name %></h2>
 
  <%= image_tag @bookshop.image_data %>
+ <h3>書店情報</h3>
  <%= @bookshop.phone %>
 
- <%= link_to '書店情報を編集する', edit_bookshop_url(@bookshop) %>
+
+ <h4><%= @bookshop.name %>へのコメント</h4>
+ <% @comments.each do |comment| %>
+    <%= simple_format(comment.body) %>
+
+    <%= link_to '投稿者：', user_path(comment.user.id) %>
+    <% if comment.user == current_user %>
+      <%= link_to "コメントを削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
+    <% end %>
+<% end %>
+<%= render 'comments/new' %>
+ <p><%= link_to '書店情報を編集する', edit_bookshop_url(@bookshop) %></p>
 
 
 

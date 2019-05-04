@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.build(comment_params)
-    @comment.shop_id = params[:shop_id]
+    @comment.bookshop_id = params[:bookshop_id]
     if @comment.save
       flash[:success] = "コメントが投稿されました。"
       redirect_back(fallback_location: root_url)
