@@ -9,4 +9,10 @@ class LikesController < ApplicationController
     @like = current_user.likes.find_by(bookshop: @bookshop)
   end
 
+  private
+
+    def set_bookshop
+      @bookshop = Bookshop.find(params[:bookshop_id])
+    end
+
 end

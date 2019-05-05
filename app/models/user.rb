@@ -6,5 +6,8 @@ class User < ApplicationRecord
 
          has_many :comments, dependent: :destroy
          has_many :bookshop, through: :comments
+         has_many :likes, dependent: :destroy
+         has_many :like_bookshops, through: :likes, source: :bookshop
+
 
         end

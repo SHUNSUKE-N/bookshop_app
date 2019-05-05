@@ -3,7 +3,8 @@ class Bookshop < ApplicationRecord
 
     has_many :comments, dependent: :destroy
     has_many :users, through: :comments
-
+    has_many :likes, dependent: :destroy
+    has_many :like_users, through: :likes, source: :user
 
     validates :name, presence: true, length: {maximum: 50}
     validates :phone, presence: true, uniqueness: true
@@ -11,11 +12,17 @@ class Bookshop < ApplicationRecord
     validates :area, presence: true, length: {maximum: 20}
     validates :station, presence: true, length: {maximum: 20}
 
-    # アップロードされた画像のサイズをバリデーションする
+    scope :like_num, -> {order(likes_count: :desc)}
+
+    # アップロードされた画像のサイズを最大5MBにバリデーションする
     def picture_size
         if picture.size > 5.megabytes
           errors.add(:picture, "should be less than 5MB")
         end
-      end    
+    end    
+
+    def like?(user)
+      like_users.include?(user)
+    end
 
 end

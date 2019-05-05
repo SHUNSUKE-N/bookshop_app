@@ -4,49 +4,43 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@bookshop) do |f| %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %><br />
 
-      <%= f.label :phone %>
-      <%= f.text_field :phone %>
+      <%= f.label :phone %><br />
+      <%= f.text_field :phone %><br />
 
-      <%= f.label :image_data %>
-      <%= f.file_field :image_data, accept: 'image/jpeg,image/gif,image/png' %>
+      <%= f.label :image_data %><br />
+      <%= f.file_field :image_data, accept: 'image/jpeg,image/gif,image/png' %><br />
 
-      <%= f.label :address %>
-      <%= f.text_field :address %>
+      <%= f.label :address %><br />
+      <%= f.text_field :address %><br />
 
-      <%= f.label :area %>
-      <%= f.text_field :area %>
+      <%= f.label :area %><br />
+      <%= f.text_field :area %><br />
 
-      <%= f.label :station %>
-      <%= f.text_field :station %>
+      <%= f.label :station %><br />
+      <%= f.text_field :station %><br />
 
-      <%= f.label :url %>
-      <%= f.text_field :url %>
+      <%= f.label :url %><br />
+      <%= f.text_field :url %><br />
 
-      <%= f.label :twitter_url %>
-      <%= f.text_field :twitter_url %>
+      <%= f.label :twitter_url %><br />
+      <%= f.text_field :twitter_url %><br />
       
-      <%= f.label :google_map_url %>
-      <%= f.text_field :google_map_url %>
+      <%= f.label :google_map_url %><br />
+      <%= f.text_field :google_map_url %><br />
       
-      <%= f.label :business_hour %>
-      <%= f.text_field :business_hour %>
+      <%= f.label :business_hour %><br />
+      <%= f.text_field :business_hour %><br />
       
-      <%= f.label :holiday %>
-      <%= f.text_field :holiday %>
+      <%= f.label :holiday %><br />
+      <%= f.text_field :holiday %><br />
             
-      <%= f.label :access %>
-      <%= f.text_field :access %>
+      <%= f.label :access %><br />
+      <%= f.text_field :access %><br />
             
-      <%= f.label :comments_count %>
-      <%= f.text_field :comments_count %>
-
-
-
-
-      <%= f.submit "この編集を保存する", class: "btn btn-primary" %>
+      <%= f.submit "これで登録", class: "btn btn-primary" %><br />
     <% end %>
   </div>
 </div> 

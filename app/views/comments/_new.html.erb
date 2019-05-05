@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <%= form_for(current_user.comments.build, url: bookshop_comments_path(@bookshop.id)) do |f| %>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %><br />
  
     <%= f.submit "コメントを投稿", class: "btn btn-primary" %>
     <% end %>

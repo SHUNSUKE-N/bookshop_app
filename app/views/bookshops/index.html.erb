@@ -3,8 +3,7 @@
 <h2>書店一覧</h2>
 <ul class="bookshops">
 <% @bookshops.each do |bookshop| %>
-
    <%= image_tag bookshop.image_data.url if bookshop.image_data? %>
    <h3><%= link_to bookshop.name, bookshop %></h3>
-
+   <%= bookshop.description %><br />
 <% end %>
