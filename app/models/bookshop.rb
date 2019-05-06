@@ -12,7 +12,6 @@ class Bookshop < ApplicationRecord
     validates :area, presence: true, length: {maximum: 20}
     validates :station, presence: true, length: {maximum: 20}
 
-    scope :like_num, -> {order(likes_count: :desc)}
 
     # アップロードされた画像のサイズを最大5MBにバリデーションする
     def picture_size
@@ -21,8 +20,8 @@ class Bookshop < ApplicationRecord
         end
     end    
 
-    def like?(user)
-      like_users.include?(user)
+    def like_user(user_id)
+      likes.find_by(user_id: user_id)
     end
 
 end

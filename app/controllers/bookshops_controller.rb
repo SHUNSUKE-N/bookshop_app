@@ -4,7 +4,6 @@ class BookshopsController < ApplicationController
 
   def index
     @bookshops = Bookshop.all
-
   end
   
   def show

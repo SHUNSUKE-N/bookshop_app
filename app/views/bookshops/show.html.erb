@@ -1,32 +1,30 @@
 <% provide(:title, @bookshop.name) %>
 <h2><%= @bookshop.name %></h2>
 
- <%= image_tag @bookshop.image_data %>
+   <%= image_tag @bookshop.image_data %>
  <h3>書店情報</h3>
- <%= @bookshop.description %><br />
- <%= @bookshop.area %><br />
- <%= @bookshop.address %><br />
- <%= @bookshop.phone %><br />
- <%= @bookshop.station %><br />
- <%= @bookshop.url %><br />
- <%= @bookshop.twitter_url %><br />
- <%= @bookshop.business_hour %><br />
- <%= @bookshop.holiday %><br />
- <%= @bookshop.access %><br />
-
+   <%= @bookshop.description %><br />
+   <%= @bookshop.area %><br />
+   <%= @bookshop.address %><br />
+   <%= @bookshop.phone %><br />
+   <%= @bookshop.station %><br />
+   <%= @bookshop.url %><br />
+   <%= @bookshop.twitter_url %><br />
+   <%= @bookshop.business_hour %><br />
+   <%= @bookshop.holiday %><br />
+   <%= @bookshop.access %><br />
 
  <h3><%= @bookshop.name %>へのコメント</h3>
- <% @comments.each do |comment| %>
-    <%= simple_format(comment.body) %>
-    投稿者:
-    <%= link_to comment.user.name, user_path(comment.user.id) %><br />
-        
-    <% if comment.user == current_user %>
-      <%= link_to "自分のコメントを削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
-    <% end %>
-<% end %>
-<%= render 'comments/new' %>
- <p><%= link_to '書店情報を編集する', edit_bookshop_url(@bookshop) %></p>
+   <% @comments.each do |comment| %>
+      <%= simple_format(comment.body) %>
+      投稿者:
+      <%= link_to comment.user.name, user_path(comment.user.id) %><br />
+      <% if comment.user == current_user %>
+       <%= link_to "自分のコメントを削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
+      <% end %>
+   <% end %>
+   <%= render 'comments/new' %>
+  <p><%= link_to '書店情報を編集する', edit_bookshop_url(@bookshop) %></p>
 
 
 
