@@ -20,8 +20,8 @@ class Bookshop < ApplicationRecord
         end
     end    
 
-    def like_user(user_id)
-      likes.find_by(user_id: user_id)
+    def like?(user)
+      like_users.include?(user)
     end
 
 end

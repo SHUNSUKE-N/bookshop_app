@@ -6,18 +6,21 @@ class LikesController < ApplicationController
   end
 
   def create
-    @like = Like.create(user_id: current_user.id, bookshop_id: params[:bookshop_id])
-    @likes = Like.where(bookshop_id: params[:bookshop_id])
-    @bookshops = Bookshop.all
+    @bookshop = Bookshop.find(params[:bookshop_id])
+    @like = current_user.likes.find_by(bookshop: @bookshop)
+    toggle
     end
 
-  def destroy
-    like = Like.find_by(user_id: current_user.id, bookshop_id: params[:bookshop_id])
-    like.destroy
-    @likes = Like.where(bookshop_id: params[:bookshop_id])
-    @bookshops = Bookshop.all
-  end
-
   private
+
+  def toggle
+    if @like
+      return head :unprocessable_entity unless @like.destroy
+    else
+      @like = current_user.likes.build(shop: @bookshop)
+      return head :unprocessable_entity unless @like.save
+    end
+    head :ok
+  end
 
 end
