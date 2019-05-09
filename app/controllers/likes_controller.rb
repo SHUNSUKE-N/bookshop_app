@@ -17,7 +17,7 @@ class LikesController < ApplicationController
     if @like
       return head :unprocessable_entity unless @like.destroy
     else
-      @like = current_user.likes.build(shop: @bookshop)
+      @like = current_user.likes.build(bookshop: @bookshop)
       return head :unprocessable_entity unless @like.save
     end
     head :ok
