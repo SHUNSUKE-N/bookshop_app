@@ -14,9 +14,9 @@
         <%= link_to "Bookshop tour", root_path %>
         <%= link_to "書店一覧", bookshops_url %>
         <% if user_signed_in? %>
-          <strong><%= link_to 'マイページ', current_user %></strong>
+          <%= link_to 'マイページ', current_user %>
           <%= link_to 'プロフィール変更', edit_user_registration_path %>
-           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to '新規ユーザー登録', new_user_registration_path %>
           <%= link_to 'ログイン', new_user_session_path %>

@@ -1,2 +1,13 @@
-<h1>Likes#index</h1>
-<p>Find me in app/views/likes/index.html.erb</p>
+　<% if current_user.likes.any? %>
+　　　　<p class="font-weight-bold">いいね！したお店一覧</p>
+
+　　　　<% @likes.each do |like| %>
+        <%= link_to 'likes.bookshop.name', bookshop_url(likes.shop_id) %> 
+
+
+    <% else %>
+    <h4>いいね！したお店はありません</h4> 
+    <% end %>
+    </div>
+
+

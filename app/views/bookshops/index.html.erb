@@ -5,8 +5,8 @@
 <% @bookshops.each do |bookshop| %>
    <%= image_tag bookshop.image_data.url if bookshop.image_data? %>
    <h3><%= link_to bookshop.name, bookshop %></h3>
+   いいね！合計数：<%= bookshop.like_users.count %><br />
    <%= bookshop.description %><br />
-   
 
 
 <% end %>
