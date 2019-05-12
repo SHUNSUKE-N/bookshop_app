@@ -3,7 +3,7 @@
 
    <%= image_tag @bookshop.image_data %>
  <h3>書店情報</h3>
-   <%= render 'likes/like' %>
+   <%= render 'likes/like' %><br />
    <%= @bookshop.description %><br />
    <%= @bookshop.area %><br />
    <%= @bookshop.address %><br />
@@ -24,7 +24,7 @@
        <%= link_to "自分のコメントを削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
       <% end %>
    <% end %>
-   <%= render 'comments/new' %>
+   <%= render 'comments/new' %><br />
   <p><%= link_to '書店情報を編集する', edit_bookshop_url(@bookshop) %></p>
 
 

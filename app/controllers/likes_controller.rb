@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-  before_action :set_bookshop, only: [:create, :destroy]
 
   def index
     @likes = current_user.likes.all.desc

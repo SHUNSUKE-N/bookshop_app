@@ -7,9 +7,8 @@ Rails.application.routes.draw do
 
   resources :bookshops do
     resources :comments, only: [:create]
-    resources :likes, only: [:create, :destroy]
   end
 
+  resources :likes, only: [:create]
   resources :comments, only: :destroy
-  
 end

@@ -1,7 +1,7 @@
 $(function(){
     // id="link-mark"の箇所(いいねボタン)をクリックしたら
     $('#link-mark').on('click', function(){
-      // 非同期でlikes#createに処理を送信＋その時に店舗情報(shop_id)を渡す
+      // 非同期でlikes#createに処理を送信＋その時に店舗情報(bookshop_id)を渡す
       $.ajax({
         url: '/likes',
         type: 'POST',

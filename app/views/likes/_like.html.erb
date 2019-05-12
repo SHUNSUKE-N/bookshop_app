@@ -1,8 +1,8 @@
 <% if user_signed_in?
 unless @bookshop.like?(current_user) %>
-  <a class="btn btn-primary text-white" data-bookshop_id="<%= ::Temple::Utils.escape_html_safe((@bookshop.id)) %>" id="link-mark">いいね！</a>
+  <a class="btn-primary" data-bookshop_id="<%= ::Temple::Utils.escape_html_safe((@bookshop.id)) %>" id="link-mark">いいね！</a>
 <% else %>
-  <a class="btn btn-secondary text-white" data-bookshop_id="<%= ::Temple::Utils.escape_html_safe((@bookshop.id)) %>" id="link-mark">いいね！を取り消す</a>
+  <a class="btn-secondary" data-bookshop_id="<%= ::Temple::Utils.escape_html_safe((@bookshop.id)) %>" id="link-mark">いいね！を取り消す</a>
 <% end; end %>
 
   <%= ::Temple::Utils.escape_html_safe((javascript_include_tag('like'))) %>
