@@ -14,7 +14,8 @@
    <%= @bookshop.business_hour %><br />
    <%= @bookshop.holiday %><br />
    <%= @bookshop.access %><br />
-
+   <iframe src= <%= @bookshop.google_map_url %>></iframe>
+   
  <h3><%= @bookshop.name %>へのコメント</h3>
    <% @comments.each do |comment| %>
       <%= simple_format(comment.body) %>

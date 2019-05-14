@@ -14,5 +14,9 @@ module BookshopApp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+  
+      # ベースURL
+       config.twitter_base_url = 'https://twitter.com'
+      # config.google_map_base_url = 'https://www.google.com/maps'
   end
 end
