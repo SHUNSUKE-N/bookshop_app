@@ -74,6 +74,9 @@ p {
   line-height: 1.7em;
 }
 
+iframe {
+  text-align: center
+}
 
 /* header */
 
@@ -123,7 +126,7 @@ footer {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: 80%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -159,4 +162,9 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+// font-awesome
+.fa-heart {
+  color: red;
 }

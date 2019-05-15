@@ -14,7 +14,7 @@
    <%= @bookshop.business_hour %><br />
    <%= @bookshop.holiday %><br />
    <%= @bookshop.access %><br />
-   <iframe src= <%= @bookshop.google_map_url %>></iframe>
+   <iframe src= <%= @bookshop.google_map_url %>width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br />
    
  <h3><%= @bookshop.name %>へのコメント</h3>
    <% @comments.each do |comment| %>
