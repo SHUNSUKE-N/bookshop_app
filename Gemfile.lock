@@ -436,6 +436,7 @@ DEPENDENCIES
   coffee-script-source (= 1.8.0)
   devise
   fog (= 1.42)
+  fog-aws
   font-awesome-rails
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
