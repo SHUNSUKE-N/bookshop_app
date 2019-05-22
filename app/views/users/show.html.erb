@@ -1,12 +1,5 @@
 <% provide(:title, @user.name) %>
 <h1><%= @user.name %>のユーザー情報</h1>
 
-<h2>いいねしている書店</h2>
-<% @user.like_bookshops.each do |bookshop| %>
-  <%= image_tag bookshop.image_data.url if bookshop.image_data? %><br />
-　<%= link_to bookshop.name, bookshop.url %><br />
-  <%= bookshop.description %><br />
 
-
-<% end %>
 
