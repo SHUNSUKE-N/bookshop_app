@@ -4,9 +4,13 @@
 「本屋体験」ができる東京の書店を紹介します。
 </p>
 
-<ul class="bookshops">
-<% @bookshops.each do |bookshop| %>
-   <%= image_tag bookshop.image_data.url if bookshop.image_data? %>
-   <h3><%= link_to bookshop.name, bookshop %></h3>
-       <%= bookshop.description %><br />
-<% end %>
+<div class="col-xs-12 text-center">
+  <div class="thumbnail">
+    <ul class="bookshops">
+      <% @bookshops.each do |bookshop| %>
+       <%= image_tag bookshop.image_data.url if bookshop.image_data? %>
+         <h3><%= link_to bookshop.name, bookshop %></h3>
+           <%= bookshop.description %><br />
+     <% end %>
+  </div>
+</div>

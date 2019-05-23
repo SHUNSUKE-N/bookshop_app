@@ -1,4 +1,6 @@
 <% provide(:title, @bookshop.name) %>
+<div class="col-xs-12 text-center">
+  <div class="thumbnail">
 <h2><%= @bookshop.name %></h2>
 
    <%= image_tag @bookshop.image_data %>
@@ -14,7 +16,8 @@
    <%= @bookshop.holiday %><br />
    <%= @bookshop.access %><br />
    <iframe src= <%= @bookshop.google_map_url %>width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br />
-   
+   </div>
+   </div>
  <h3><%= @bookshop.name %>へのコメント</h3>
    <% @comments.each do |comment| %>
       <%= simple_format(comment.body) %>
