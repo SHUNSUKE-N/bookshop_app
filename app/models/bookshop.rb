@@ -3,6 +3,8 @@ class Bookshop < ApplicationRecord
 
     has_many :comments, dependent: :destroy
     has_many :users, through: :comments
+    has_many :likes, dependent: :destroy
+    has_many :like_users, through: :likes, source: :user
 
     validates :name, presence: true, length: {maximum: 50}
     validates :phone, presence: true, uniqueness: true
