@@ -1,17 +1,24 @@
 <% provide(:title, "Home") %>
-<div class="row">
   <p>
   「本屋体験」ができる東京の書店を紹介します。
   </p>
-</div>
+  <%= link_to "店舗一覧から探す", bookshops_url %>
 
-<div class="col-xs-12">
-  <div class="thumbnail">
-    <ul class="bookshops">
-      <% @bookshops.each do |bookshop| %>
-       <%= image_tag bookshop.image_data.url if bookshop.image_data? %>
-         <h3><%= link_to bookshop.name, bookshop %></h3>
-           <%= bookshop.description %><br />
-     <% end %>
-  </div>
+<h2>新着口コミ</h2>
+<div class="container">
+        <% @comments.reverse_each do |comment| %>
+          <div class="posts">
+            <div class="row">
+                 <div class="col-md-3">
+                   <%= image_tag comment.bookshop.image_data.url if comment.bookshop.image_data? %>
+                 </div>
+              <div class="col-md-9">
+                <h3><%= comment.body %></h3>
+                <%= link_to "#{comment.user.name}さんの投稿", user_path(comment.user.id) %>
+                <%= time_ago_in_words(comment.created_at) %> 前</br>
+                <%= link_to "『#{comment.bookshop.name}』を見てみる", bookshop_path(comment.bookshop.id) %><br />
+              </div>
+            </div>
+          </div>
+        <% end %>
 </div>
