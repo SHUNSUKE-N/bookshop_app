@@ -18,14 +18,14 @@
  @import "bootstrap";
 
  /* mixins, variables, etc. */
- 
- $gray-medium-light: #eaeaea;
+  $gray-medium-light: #eaeaea;
  
  @mixin box_sizing {
    -moz-box-sizing:    border-box;
    -webkit-box-sizing: border-box;
    box-sizing:         border-box;
  }
+
  /* universal */
  
  body {
@@ -58,13 +58,13 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color: $gray-light;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.8em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
@@ -73,6 +73,7 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
 
 
 
@@ -162,3 +163,27 @@ input {
   margin-left: 0;
 }
 
+
+
+// google-mapの設定
+.map_wrapper {
+  max-width: 600px;
+  min-width: 280px;
+  margin: 20px auto;
+  padding: 4px;  
+}
+
+.google-maps {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+  }
+  
+  .google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  }

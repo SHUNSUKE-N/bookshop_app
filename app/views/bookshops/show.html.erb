@@ -1,10 +1,8 @@
 <% provide(:title, @bookshop.name) %>
-<div class="col-xs-12 text-center">
-  <div class="thumbnail">
-<h2><%= @bookshop.name %></h2>
-
+<div class="col-xs-12">
+<h1><%= @bookshop.name %></h1>
    <%= image_tag @bookshop.image_data %>
- <h3>書店情報</h3>
+ <h2>書店情報</h2>
    <%= @bookshop.description %><br />
    <%= @bookshop.area %><br />
    <%= @bookshop.address %><br />
@@ -15,9 +13,12 @@
    <%= @bookshop.business_hour %><br />
    <%= @bookshop.holiday %><br />
    <%= @bookshop.access %><br />
-   <iframe src= <%= @bookshop.google_map_url %>width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br />
-   </div>
-   </div>
+   <div class="map_wrapper">
+     <div class="google-maps">
+       <iframe src= <%= @bookshop.google_map_url %>width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br />
+     </div>
+  </div>
+</div>
  <h3><%= @bookshop.name %>へのコメント</h3>
    <% @comments.each do |comment| %>
       <%= simple_format(comment.body) %>
