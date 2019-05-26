@@ -14,7 +14,7 @@
                  </div>
               <div class="col-md-9">
                 <h3><%= comment.body %></h3>
-                <%= link_to "#{comment.user.name}さんの投稿", user_path(comment.user.id) %>
+                <%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %>の投稿
                 <%= time_ago_in_words(comment.created_at) %> 前</br>
                 <%= link_to "『#{comment.bookshop.name}』を見てみる", bookshop_path(comment.bookshop.id) %><br />
               </div>

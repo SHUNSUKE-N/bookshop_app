@@ -1,35 +1,48 @@
 <% provide(:title, @bookshop.name) %>
-<div class="col-xs-12">
 <h1><%= @bookshop.name %></h1>
-   <%= image_tag @bookshop.image_data %>
- <h2>書店情報</h2>
-   <%= @bookshop.description %><br />
-   <%= @bookshop.area %><br />
-   <%= @bookshop.address %><br />
-   <%= @bookshop.phone %><br />
-   <%= @bookshop.station %><br />
-   <%= @bookshop.url %><br />
-   <%= @bookshop.twitter_url %><br />
-   <%= @bookshop.business_hour %><br />
-   <%= @bookshop.holiday %><br />
-   <%= @bookshop.access %><br />
-   <div class="map_wrapper">
-     <div class="google-maps">
-       <iframe src= <%= @bookshop.google_map_url %>width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br />
+<div class="container">
+  <div class="row">
+      <%= image_tag @bookshop.image_data %>
+      <h2>書店情報</h2>
+        <%= @bookshop.description %><br />
+        <%= @bookshop.area %><br />
+        <%= @bookshop.address %><br />
+        <%= @bookshop.phone %><br />
+        <%= @bookshop.station %><br />
+        <%= @bookshop.url %><br />
+        <%= @bookshop.twitter_url %><br />
+        <%= @bookshop.business_hour %><br />
+        <%= @bookshop.holiday %><br />
+        <%= @bookshop.access %><br />
+
+     <div class="map_wrapper">
+      <div class="google-maps">
+        <iframe src= <%= @bookshop.google_map_url %>width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br />
+      </div>
      </div>
   </div>
 </div>
- <h3><%= @bookshop.name %>へのコメント</h3>
+
+<div class="bookshop_wrapper">
+<div class="container">
+ <h2><%= @bookshop.name %>へのコメント</h2>
    <% @comments.each do |comment| %>
-      <%= simple_format(comment.body) %>
+    <div class="bookshop-show-posts">
+      <h4><%= comment.body %></h4>
       投稿者:
-      <%= link_to comment.user.name, user_path(comment.user.id) %><br />
+      <%= link_to comment.user.name, user_path(comment.user.id) %>
+      <%= time_ago_in_words(comment.created_at) %> 前
       <% if comment.user == current_user %>
-       <%= link_to "自分のコメントを削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
+       <%= link_to "削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
       <% end %>
+    </div>
    <% end %>
+</div>
+</div>
+
    <%= render 'comments/new' %><br />
   <p><%= link_to '書店情報を編集する', edit_bookshop_url(@bookshop) %></p>
+
 
 
 

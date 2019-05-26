@@ -1,5 +1,33 @@
 <% provide(:title, @user.name) %>
-<h1><%= @user.name %>のユーザー情報</h1>
 
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+      <%= @user.name %>
+      </h1>
+    </section>
+    <section class="stats">
+      <%= @user.description %>
+    </section>
+  </aside>
 
-
+  <div class="col-md-8">
+   <div class="container">
+      <% if @user.comments.any? %>
+        <h2>コメント投稿一覧 (<%= @user.comments.count %>)</h2>
+            <% @comments.each do |comment| %>
+              <div class="posts">
+                <h3><%= comment.body %></h3>
+                <% if comment.user == current_user %>
+                  <%= link_to "削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
+                  <%= time_ago_in_words(comment.created_at) %> 前</br>
+                  <%= link_to "『#{comment.bookshop.name}』", bookshop_path(comment.bookshop.id) %><br />
+              </div>
+                <% end %>
+            <% end %>
+        </div>
+      <% end %>
+   </div>
+  </div>
+</div>

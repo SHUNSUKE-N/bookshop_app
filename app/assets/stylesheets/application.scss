@@ -57,7 +57,6 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
   color: $gray-light;
 }
 
@@ -125,7 +124,7 @@ footer {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 80%;
+  width: 45%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -196,4 +195,44 @@ input {
     border-bottom: 1px solid #e8e8e8;
   }
 
+//bookshop-showページの仕様
+.bookshop-show-posts {
+    list-style: none;
+    padding: 10px 0;
+    width: 60%;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+  }
 
+.bookshop_wrapper {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 3em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
