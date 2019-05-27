@@ -195,6 +195,11 @@ input {
     border-bottom: 1px solid #e8e8e8;
   }
 
+.thumbnail {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 //bookshop-showページの仕様
 .bookshop-show-posts {
     list-style: none;
@@ -207,6 +212,10 @@ input {
 .bookshop_wrapper {
   padding-top: 30px;
   padding-bottom: 40px;
+}
+
+.table_container{
+  width: 76%;
 }
 
 /* sidebar */
@@ -236,3 +245,4 @@ aside {
     }
   }
 }
+

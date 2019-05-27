@@ -4,17 +4,41 @@
   <div class="row">
       <%= image_tag @bookshop.image_data %>
       <h2>書店情報</h2>
-        <%= @bookshop.description %><br />
-        <%= @bookshop.area %><br />
-        <%= @bookshop.address %><br />
-        <%= @bookshop.phone %><br />
-        <%= @bookshop.station %><br />
-        <%= @bookshop.url %><br />
-        <%= @bookshop.twitter_url %><br />
-        <%= @bookshop.business_hour %><br />
-        <%= @bookshop.holiday %><br />
-        <%= @bookshop.access %><br />
-
+      <h4><%= @bookshop.description %></h3>
+      <div class="table_container">
+      　<table class="table table-striped">
+      　　<tbody>
+        　　<tr>
+              <th>住所</th>
+              <td><%= @bookshop.address %></td>
+        　　</tr>
+        　　<tr>
+              <th>電話番号</th>
+              <td><%= @bookshop.phone %></td>
+        　　</tr>
+        　　<tr>
+              <th>最寄り駅</th>
+              <td><%= @bookshop.station %></td>
+        　　</tr>
+        　　<tr>
+              <th>URL</th>
+              <td><%= @bookshop.url %></td>
+        　　</tr>
+       　　<tr>
+              <th>営業時間</th>
+              <td><%= @bookshop.business_hour %></td>
+        　　</tr>
+        　　<tr>
+              <th>休業日</th>
+              <td><%= @bookshop.holiday %></td>
+        　　</tr>
+        　　<tr>
+              <th>アクセス</th>
+              <td><%= @bookshop.access %></td>
+            </tr>
+        　</tbody>
+        </table>
+      </div>
      <div class="map_wrapper">
       <div class="google-maps">
         <iframe src= <%= @bookshop.google_map_url %>width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br />
@@ -29,11 +53,10 @@
    <% @comments.each do |comment| %>
     <div class="bookshop-show-posts">
       <h4><%= comment.body %></h4>
-      投稿者:
-      <%= link_to comment.user.name, user_path(comment.user.id) %>
+      <%= link_to comment.user.name, user_path(comment.user.id) %>さんの投稿｜
       <%= time_ago_in_words(comment.created_at) %> 前
       <% if comment.user == current_user %>
-       <%= link_to "削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
+       <%= link_to "｜削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
       <% end %>
     </div>
    <% end %>

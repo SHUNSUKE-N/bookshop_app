@@ -9,13 +9,15 @@
         <% @comments.reverse_each do |comment| %>
           <div class="posts">
             <div class="row">
-                 <div class="col-md-3">
-                   <%= image_tag comment.bookshop.image_data.url if comment.bookshop.image_data? %>
-                 </div>
-              <div class="col-md-9">
-                <h3><%= comment.body %></h3>
+                 <div class="col-md-2">
+                   <div class=thumbnail>
+                     <%= image_tag comment.bookshop.image_data.url if comment.bookshop.image_data? %>
+                   </div>
+                  </div>
+              <div class="col-md-10">
                 <%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %>の投稿
                 <%= time_ago_in_words(comment.created_at) %> 前</br>
+                <h3><%= comment.body %></h3>
                 <%= link_to "『#{comment.bookshop.name}』を見てみる", bookshop_path(comment.bookshop.id) %><br />
               </div>
             </div>
