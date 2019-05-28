@@ -2,9 +2,8 @@
 <%= form_for(current_user.comments.build, url: bookshop_comments_path(@bookshop.id)) do |f| %>
     <%= f.label :body, "コメント" %><br />
     <%= f.text_area :body %><br />
- 
     <%= f.submit "コメントを投稿", class: "btn btn-primary" %>
     <% end %>
 <% else %>
-    <%= link_to "ログインしてコメントを投稿！", new_user_session_url %>
+    <%= link_to "ログインしてコメントを投稿する", new_user_session_url %>
 <% end %>

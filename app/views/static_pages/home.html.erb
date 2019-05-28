@@ -2,7 +2,7 @@
   <p>
   「本屋体験」ができる東京の書店を紹介します。
   </p>
-  <%= link_to "店舗一覧から探す", bookshops_url %>
+  <h2><%= link_to "店舗一覧から探す", bookshops_url, class: "btn btn-lg btn-primary" %></h2>
 
 <h2>新着口コミ</h2>
 <div class="container">
@@ -10,8 +10,8 @@
           <div class="posts">
             <div class="row">
                  <div class="col-md-2">
-                   <div class=thumbnail>
-                     <%= image_tag comment.bookshop.image_data.url if comment.bookshop.image_data? %>
+                   <div class="thumbnail">
+                     <%= image_tag comment.bookshop.image_data if comment.bookshop.image_data? %>
                    </div>
                   </div>
               <div class="col-md-10">

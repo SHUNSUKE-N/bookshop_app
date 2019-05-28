@@ -5,7 +5,7 @@
   <div class="row">
         <% @bookshops.each do |bookshop| %>
           <div class="col-md-4">
-           <%= image_tag bookshop.image_data.url if bookshop.image_data? %>
+           <%= image_tag bookshop.image_data if bookshop.image_data? %>
            <h3><%= link_to bookshop.name, bookshop %></h3>
            <%= bookshop.description %>
            </div>
