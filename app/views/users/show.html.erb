@@ -21,10 +21,10 @@
                 <h3><%= comment.body %></h3>
                 <% if comment.user == current_user %>
                   <%= link_to "削除する", comment, method: :delete,data: { confirm: "You sure?" } %>
+                <% end %>
                   <%= time_ago_in_words(comment.created_at) %> 前</br>
                   <%= link_to "『#{comment.bookshop.name}』", bookshop_path(comment.bookshop.id) %><br />
               </div>
-                <% end %>
             <% end %>
         </div>
       <% end %>
