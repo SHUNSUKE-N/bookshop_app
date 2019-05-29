@@ -63,9 +63,10 @@
 </div>
 </div>
 
-   <%= render 'comments/new' %><br />
-  <p><%= link_to '書店情報を編集する', edit_bookshop_url(@bookshop) %></p>
-
+<%= render 'comments/new' %><br />
+<% if user_signed_in? && current_user.admin_flg? %>
+ <p><%= link_to '書店情報を編集する', edit_bookshop_url(@bookshop) %></p>
+<% end %>
 
 
 
