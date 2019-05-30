@@ -1,7 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  body: MyText
+orange:
+  body: "I just ate an orange!"
+  created_at: <%= 10.minutes.ago %>
+  user: michael
 
-two:
-  body: MyText
+tau_manifesto:
+  body: "Check out the @tauday site by @mhartl: http://tauday.com"
+  created_at: <%= 3.years.ago %>
+  user: michael
+  
