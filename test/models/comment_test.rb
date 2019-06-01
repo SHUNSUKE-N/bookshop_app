@@ -7,10 +7,6 @@ class CommentTest < ActiveSupport::TestCase
     @comment = @user.comments.build(body: "I am the walrus")
   end
 
-  test "should be valid" do
-    assert @comment.valid?
-  end
-
   test "user id should be present" do
     @comment.user_id = nil
     assert_not @comment.valid?
