@@ -9,7 +9,7 @@
               <%= image_tag bookshop.image_data if bookshop.image_data? %>
               <div class="card-body.d-flex.justify-content-between">
                 <h3><%= link_to bookshop.name, bookshop %></h3>
-                <%= bookshop.description %>
+                <%= @bookshop.description %>
               </div>
             </div>
          </div>
