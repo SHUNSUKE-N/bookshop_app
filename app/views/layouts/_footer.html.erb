@@ -2,10 +2,10 @@
 <nav>
 <ul>
 　<li><%= link_to "ホーム", root_url %></li>
-  <% if user_signed_in? && current_user.admin_flg? %>
+#  <% if user_signed_in? && current_user.admin_flg? %>
     <li><%= link_to "新規書店を登録（管理者専用）", new_bookshop_path%></li>
     <li><%= link_to "管理者ページ", rails_admin_path%></li>
-  <% end %>
+#  <% end %>
 </ul>
 </nav>
 </footer>
