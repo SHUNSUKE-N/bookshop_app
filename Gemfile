@@ -8,7 +8,7 @@ end
 gem 'rails',        '5.1.6'
 gem 'devise'
 gem 'cancancan'
-gem 'rails_admin', '~> 1.3'
+gem 'rails_admin', '~> 1.4'
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
 gem 'bootstrap-sass', '3.3.7'
